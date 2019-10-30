@@ -1,0 +1,4 @@
+time remain: 20
+actual cash: 2
+cost: 11
+SI

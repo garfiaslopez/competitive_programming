@@ -1,0 +1,46 @@
+Dada una entrada: [ (0,0) (1,0) (2,0) (3,0) (3,0) (3,0) (3,0) (3,0) (3,0) (3,0) ]
+
+[IDFT] Su transofrmada de fourier inversa es: 
+(2.4,0) (0.05,-0.0363271) (0.130902,0.0951057) (1.11022e-17,0.190211) (0.0572949,0.176336) (-0.2,0) (-0.111803,-0.153884) (0.0690983,-0.0951057) (0.0618034,-1.11022e-17) (0.542705,-0.176336) 
+
+frecuencia: 1
+real: 2.4  img: 0
+amplitud: 2.4  Fase (Grados): 0
+
+frecuencia: 2
+real: 0.05  img: -0.0363271
+amplitud: 0.0618034  Fase (Grados): -36
+
+frecuencia: 3
+real: 0.130902  img: 0.0951057
+amplitud: 0.161803  Fase (Grados): 36
+
+frecuencia: 4
+real: 1.11022e-17  img: 0.190211
+amplitud: 0.190211  Fase (Grados): 90
+
+frecuencia: 5
+real: 0.0572949  img: 0.176336
+amplitud: 0.18541  Fase (Grados): 72
+
+frecuencia: 6
+real: -0.2  img: 0
+amplitud: 0.2  Fase (Grados): 180
+
+frecuencia: 7
+real: -0.111803  img: -0.153884
+amplitud: 0.190211  Fase (Grados): -126
+
+frecuencia: 8
+real: 0.0690983  img: -0.0951057
+amplitud: 0.117557  Fase (Grados): -54
+
+frecuencia: 9
+real: 0.0618034  img: -1.11022e-17
+amplitud: 0.0618034  Fase (Grados): -1.02925e-14
+
+frecuencia: 10
+real: 0.542705  img: -0.176336
+amplitud: 0.570634  Fase (Grados): -18
+
+ # De Operaciones: 24

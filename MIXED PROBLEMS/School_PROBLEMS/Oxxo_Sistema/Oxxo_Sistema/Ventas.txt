@@ -1,0 +1,13 @@
+*************FECHA:03/04/2015*******************
+------------Venta#1----------
+Cant.4-Producto:Galletas_Marias
+TOTAL:$32
+
+*************FECHA:05/10/2015*******************
+------------Venta#1----------
+Cant.4-Producto:Refresco_Coca
+Cant.1-Producto:Hotdog
+TOTAL:$52
+------------Venta#2----------
+Cant.5-Producto:REDBULL
+TOTAL:$160

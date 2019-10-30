@@ -1,0 +1,10 @@
+#!/bin/bash
+# A simple variable example
+# usage: source ./newProblem "problemName"
+
+mkdir $1
+cp -r ./0BaseNewProblem/* ./$1
+
+echo "Created new problem directory"
+echo $1
+ 
