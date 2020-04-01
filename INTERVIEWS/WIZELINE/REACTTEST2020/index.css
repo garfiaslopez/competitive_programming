@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #root {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .app {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .button {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    background: white;
+    border: 2px solid black;
+    padding: 6px;
+    background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .actions > :not(:last-child) {
+    margin-right: 4px;
+  }
+  
+  .image {
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 4px;
+  }
+  
+  .thumbnail {
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .thumbnail::before {
+    content: '';
+    position: absolute;
+    border-radius: 3px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .2s ease-in background-color;
+    background-color: rgba(0,0,0, .7)
+  }
+  
+  .thumbnail--active::before,
+  .thumbnail:hover::before {
+    background-color: rgba(0,0,0, 0)
+  }
+  
+  .front-image {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 5px;
+  }
+  
+  .thumbnails {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 4px;
+    width: 100%;
+    margin-bottom: 4px;
+  }
+  
+  
