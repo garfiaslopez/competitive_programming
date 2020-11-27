@@ -8,7 +8,41 @@
 
 using namespace std;
 
+typedef unsigned long long ll;
+
 int main() {
+	int tests;
+	cin>>tests;
+	
+	while(tests--) {
+		ll i,j;
+		cin>>i>>j;
+		
+		ll x = i;
+		if (j>i) {
+			x = j;
+		}
+		
+		bool even = x % 2 == 0;
+		ll serieVal = ((x*x) - (x-1));
+		ll diff = llabs(i-j);
+		
+		if (i<j) {
+			if (even) {
+				cout<<serieVal - diff<<endl;
+			} else {
+				cout<<serieVal + diff<<endl;
+			}
+		} else if (i>j) {
+			if (even) {
+				cout<<serieVal + diff<<endl;
+			} else {
+				cout<<serieVal - diff<<endl;
+			}
+		} else {
+			cout<<serieVal<<endl;
+		}
+	}
     
     return (0);
 }
