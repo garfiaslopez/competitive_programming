@@ -8,11 +8,9 @@
 
 using namespace std;
 
-typedef long long i64;
+int mod = (1000000000LL + 7LL);
 
-i64 mod = (1000000000LL + 7LL);
-
-i64 search_recursive(vector<int> &possibilities, int target, int i, vector<vector<i64>> &dp) {
+int search_recursive(vector<int> &possibilities, int target, int i, vector<vector<int>> &dp) { // TLE
 	// BASE CASES
 	if (target < 0 || i >= possibilities.size() || i < 0) {
 		return 0;
@@ -26,13 +24,12 @@ i64 search_recursive(vector<int> &possibilities, int target, int i, vector<vecto
 	
 	// INCLUDE OR EXCLUDE (0/1 knapsack)
 	int newTarget = target - possibilities[i];
-	i64 ways = (search_recursive(possibilities, newTarget, i, dp) % mod) + (search_recursive(possibilities, target, i + 1, dp) % mod);
+	int ways = (search_recursive(possibilities, newTarget, i, dp) % mod) + (search_recursive(possibilities, target, i + 1, dp) % mod);
 
-	
 	return dp[i][target] = ways % mod;
 }
 
-i64 search_iterative(vector<int> &possibilities, int target, vector<vector<i64>> &dp) {
+int search_iterative(vector<int> &possibilities, int target, vector<vector<int>> &dp) { // AC
 	
     int n = possibilities.size();
     
@@ -48,15 +45,15 @@ i64 search_iterative(vector<int> &possibilities, int target, vector<vector<i64>>
             int k = possibilities[i-1];
             
             if (j<k) {
-                dp[i][j] = (dp[i-1][j]) % mod;
+                dp[i][j] = dp[i-1][j];
             } else {
-                dp[i][j] = (dp[i-1][j] % mod) + (dp[i][j-k] % mod);
+                dp[i][j] = ((dp[i-1][j]) + (dp[i][j-k])) % mod;
             }        
             
         }
     }
     
-    return dp[n][target] % mod;
+    return dp[n][target];
 }
 
 int main() {
@@ -70,8 +67,15 @@ int main() {
 		possibilities.push_back(tmp);
 	}
 	
-	vector<vector<i64>> dp = vector<vector<i64>>(n + 10, vector<i64>(x + 10, -1));
-	i64 answer = search_iterative(possibilities, x, dp);
+	vector<vector<int>> dp (n + 10, vector<int>(x + 10, -1));
+	int answer = 0;
+	bool iterative = true;
+
+	if (iterative) {
+		answer = search_iterative(possibilities, x, dp);
+	} else {
+		answer = search_recursive(possibilities, x, 0, dp);
+	}
 	
 	cout<<answer<<"\n";
 }
